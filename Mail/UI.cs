@@ -16,7 +16,7 @@ namespace Mail
                                 WindowId, 
                                 new
                                 {
-                                    Title = "Analog watch",
+                                    Title = "Mail",
                                     TypeName = typeof(MailControl).AssemblyQualifiedName
                                 },
                                 DateTime.Now.ToString()
