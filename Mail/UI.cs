@@ -1,33 +1,23 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
 using Revuo.Home.Abstractions;
 
-namespace Watch
+namespace Mail
 {
-    public class Analogue : ILogic, IInfo
-    {
-        private int _counter = 0;
-        private string WindowId = null;
-        private static Timer timer;
+    public class UI : ILogic, IInfo
+    {        
+        private string? WindowId = null;
 
         public async Task<IResult> Do(IContext context)
         {
-            if (timer == null)
-            {
-                timer = new Timer(state =>
-                {
-                    _counter++;
-
-                    var result =
+            var result =
                         context.Run("Revuo.Home.Components.UI.Control",
                             new Request(
                                 WindowId, 
                                 new
                                 {
                                     Title = "Analog watch",
-                                    TypeName = typeof(AnalogueWatchControl).AssemblyQualifiedName
+                                    TypeName = typeof(MailControl).AssemblyQualifiedName
                                 },
                                 DateTime.Now.ToString()
                                 ))
@@ -37,18 +27,14 @@ namespace Watch
                     {
                         WindowId = result.Data<string>(0);
                     }
-                }, _counter, 0, 1000);
-            }
-
             return new Result();
         }
 
         public List<KeyValuePair<string, string>> GetInfo()
         {
             return new List<KeyValuePair<string, string>>(){
-                new KeyValuePair<string, string>(MetaData.StartAble, "true")
+                new KeyValuePair<string, string>(MetaData.StartAble,"true")
             };
         }
-
     }
 }
