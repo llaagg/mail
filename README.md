@@ -1,4 +1,4 @@
-# revuo-home-plugin-watch
+# Mail plugin
 
 ## Create new project
 Just start with creating new project as a razor class library

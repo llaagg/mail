@@ -33,7 +33,9 @@ namespace Mail
         public List<KeyValuePair<string, string>> GetInfo()
         {
             return new List<KeyValuePair<string, string>>(){
-                new KeyValuePair<string, string>(MetaData.StartAble,"true")
+                new KeyValuePair<string, string>(MetaData.StartAble,"true"),
+                new KeyValuePair<string, string>(MetaData.Label,"Mail"),
+                new KeyValuePair<string, string>(MetaData.UTFSymbol,"✉"),
             };
         }
     }
