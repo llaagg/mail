@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using Revuo.Home.Abstractions;
 
-namespace HelloWorld
+namespace Mail
 {
-    public class Hello : ILogic, IInfo
+    public class UI : ILogic, IInfo
     {        
         private string? WindowId = null;
 
